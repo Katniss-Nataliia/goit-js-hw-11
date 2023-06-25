@@ -102,6 +102,7 @@ function renderImages(images){
         info.append(likes, views, comments, downloads);
         card.append(img, info);
         gallery.append(card);
+        
     })
 }
 
