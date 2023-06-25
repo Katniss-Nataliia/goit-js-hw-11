@@ -1,14 +1,73 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <!-- <link rel="stylesheet" href="dist/notiflix-3.2.6.min.css" /> -->
+
+    <style>
+     
+      form {
+        display: flex;
+        justify-content: center;
+        background-color: blue;
+        font-size: 12px;
+        padding:10px;
+        
+      }
+      form button{
+        cursor: pointer;
+      }
+      input{
+        margin-right: 20px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        padding:5px;
+        
+
+      }
+      .load-more{
+        border-radius: 10px;
+        border: 1px solid transparent;
+        padding:5px;
+        font-size: 12px;
+        color:white;
+        background-color: blue;
+        cursor: pointer;
+        padding:2px 30px 2px 30px;
+
+      }
+      .load-more-div{
+        display: flex;
+        justify-content: center;
+        
+      }
+    </style>
   </head>
   <body>
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit">Search</button>
+    </form>
+    <div class="gallery">
+      <!-- Image cards -->
+      
+    </div>
+    <div class="load-more-div"><button class="load-more" type="button">Load More</button></div>
+
+
+
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="dist/notiflix-3.2.6.min.js"></script> -->
+    <script type="module" src="./index.js"></script>
+
   </body>
 </html>
