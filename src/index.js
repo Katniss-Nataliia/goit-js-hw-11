@@ -1,4 +1,4 @@
-// import Notiflix from 'notiflix';
+import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import "simplelightbox/dist/simple-lightbox.min.css";
 
@@ -54,11 +54,12 @@ function apiFetchImages(query){
             } else{
                 moreBttn.style.display = "none";
                 console.log("Sorry, there are no images matching your search query. Please try again.")
-                // Notiflix.Notify.info("Sorry, there are no images matching your search query. Please try again.");
+                Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.')
             }
             currentPage++ // Increment the current page
         } else{
-            // Notiflix.Notify.info("Sorry, there are no images matching your search query. Please try again.");
+            moreBttn.style.display = "none";
+            Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.')
             console.log("Sorry, there are no images matching your search query. Please try again.")
             
         }
@@ -106,7 +107,8 @@ function renderImages(images){
         downloads.innerHTML = `<b>Downloads: </b>${image.downloads}`
 
         info.append(likes, views, comments, downloads);
-        card.append(img, info);
+        a.append(img);
+        card.append(a, info);
         gallery.append(card);
 
 
@@ -139,7 +141,7 @@ function createSimpleLB(imageElement){
 
 
 gallery.style.display = "flex";
-gallery.style.flexwrap = "wrap";
+gallery.style.flexWrap = "wrap";
 gallery.style.justifyContent = "space-around";
 
 
